@@ -1,0 +1,78 @@
+import * as T from 'three';
+import {mergeGeometries} from 'three/addons/utils/BufferGeometryUtils.js';
+import inventory from './inventory.json';
+
+// All values below are authored demonstration parameters in meters.
+// No STL geometry, original bounds, positions, weights, or materials are read.
+export const MODULES=[[-.65,.30],[-.15,.30],[.35,.30],[.85,.30],[-.65,-.30],[-.15,-.30],[.35,-.30],[.85,-.30],[-1.15,0]];
+const palette={Structure:0x94a38b,Modules:0x608155,Cells:0xb9cbc8,Thermal:0x579cab,Electrical:0xd2934f};
+const cube=(size,position=[0,0,0])=>new T.BoxGeometry(...size).translate(...position);
+function tray(w,h,d){return mergeGeometries([cube([w,.008,d],[0,-h/2,0]),cube([w,h,.008],[0,0,-d/2]),cube([w,h,.008],[0,0,d/2]),cube([.008,h,d],[-w/2,0,0]),cube([.008,h,d],[w/2,0,0])]);}
+function bracket(){return mergeGeometries([cube([.055,.008,.03]),cube([.008,.04,.03],[-.024,.02,0])]);}
+function pipe(length,radius=.007){return new T.TubeGeometry(new T.CatmullRomCurve3([new T.Vector3(-length/2,0,0),new T.Vector3(0,.02,.035),new T.Vector3(length/2,0,0)]),18,radius,8,false);}
+function fan(){const ring=new T.TorusGeometry(.025,.004,8,24);ring.rotateX(Math.PI/2);const blades=[ring,new T.CylinderGeometry(.008,.008,.015,12)];for(let i=0;i<4;i++)blades.push(cube([.038,.006,.009],[.01,0,0]).rotateY(i*Math.PI/2));return mergeGeometries(blades)}
+export function buildModel(scene){
+ const parts=[],counters=new Map();
+ for(const item of inventory){
+  const n=item.name.toLowerCase(),path=item.path.join('/').toLowerCase();
+  const assembly=n.startsWith('cell module large assembly'),detail=item.group==='Modules'&&!assembly;
+  let size=[.035,.018,.025],pos=[0,0,0],geometry,group=item.group,material='Mixed materials, illustrative',role='Represents a small support or interface in this conceptual assembly.',cover=false;
+  const countKey=detail?'detail/'+item.path.join('/'):item.path.slice(0,2).join('/');
+  const k=counters.get(countKey)||0;counters.set(countKey,k+1);
+  if(assembly){const m=Number(n.match(/(\d+)$/)[1]);const [x,z]=MODULES[m];pos=[x,.076,z];geometry=tray(.455,.16,.46);cover=true;role='Simplified module shell. Cells are separate, selectable layers.';material='Aluminum, illustrative';}
+  else if(detail){
+   const [x,z]=MODULES[0];pos=[x,.08,z];
+   if(n.includes('separator')){size=[.40,.064,.004];pos=[x,k<5?.12:.04,z+(k%5-2)*.058];material='Insulating polymer, illustrative';role='Keeps adjacent cell groups separated.';}
+   else if(n.includes('interconnect support')){size=[.41,.005,.29];pos=[x,k%2?.161:.002,z];material='Insulating polymer, illustrative';cover=true;role='Supports the current collector without conducting current.';}
+   else if(n.includes('interconnect')){size=[.38,.003,.01];pos=[x,k%2?.16:.002,z+((k%6)-2.5)*.045];material='Copper, illustrative';role='Symbolic cell current collector; circuit topology is not specified.';}
+   else if(n.includes('cooling')){size=[.435,.006,.34];pos=[x,.081,z];group='Thermal';material='Aluminum, illustrative';role='Represents heat transfer to a central cooling interface.';}
+   else if(n.includes('side cover')){size=[.008,.15,.075];pos=[x+(path.includes('side cover 2')?.223:-.223),.08,z+(k-1.5)*.09];cover=true;material='Insulating polymer, illustrative';role='Protective side covering.';}
+   else if(n.startsWith('top')||n.includes('insulation sheet')){size=[.43,.004,.34];pos=[x,k%2?.166:-.008,z];cover=true;material='Insulating sheet, illustrative';role='Illustrates electrical insulation around the cell layers.';}
+   else if(n.includes('end plate')){size=[.44,.17,.012];pos=[x,.08,z+(k%2?.225:-.225)];material='Aluminum, illustrative';role='Constrains the ends of the module.';}
+   else if(n.includes('flex pcb')){size=[.018,.002,.29];pos=[x+(k%2?.2:-.2),.163,z];material='Flexible circuit, illustrative';role='Represents cell voltage-sensing connections.';}
+   else if(path.includes('module control')){size=n==='cover'?[.07,.006,.045]:[.065,.004,.04];pos=[x+.17,n==='cover'?.194:.181,z+.2];cover=n==='cover';material='Circuit board / polymer, illustrative';role='Represents local monitoring electronics.';}
+   else if(n.includes('terminal')){size=[.04,.012,.027];pos=[x+(k%2?.17:-.17),.165,z-.20];material='Copper, illustrative';role='Module electrical terminal.';}
+   else if(n.includes('harness')){geometry=pipe(.3,.003);pos=[x,.17,z-.19];material='Insulated conductors, illustrative';role='Symbolic signal wiring.';}
+   else if(n.includes('thermal paste')){size=[.04,.001,.04];pos=[x,.175,z+.19];material='Thermal interface, illustrative';role='Represents a thermal interface pad.';}
+   else if(n.includes('sensor')){size=[.018,.008,.018];pos=[x,.165,z];role='Symbolic module temperature sensor.';}
+   else {geometry=bracket();pos=[x,.17,z+.18];role='Module mechanical support.';}
+  } else if(item.group==='Structure'){
+   if(n==='enclosure bottom'){geometry=tray(2.72,.19,1.18);pos=[-.12,.07,0];material='Aluminum, illustrative';role='Protective pack enclosure with perimeter walls.';}
+   else if(n==='enclosure top'||n.includes('insulator-shield')){size=[2.74,.009,1.2];pos=[-.12,n==='enclosure top'?.205:.19,0];cover=true;role='Upper pack protection and insulation.';}
+   else if(n==='second enclosure bottom'){geometry=tray(.4,.06,.4);pos=[-1.15,-.005,0];role='Secondary module support pan.';}
+   else if(n.includes('hose')){geometry=pipe(2.25,.01);pos=[-.05,.02,k%2?.53:-.53];group='Thermal';role='Conceptual coolant manifold route.';material='Elastomer hose, illustrative';}
+   else if(n.includes('quick disconnect')){geometry=bracket();pos=[-.85+k*.5,.04,.53];group='Thermal';role='Supports a coolant connection.';}
+   else if(n.includes('pressure')){geometry=new T.CylinderGeometry(.017,.017,.012,16);geometry.rotateX(Math.PI/2);pos=[-.95+k*.18,.07,path.includes('relief')?-.601:.601];role='Illustrates a pressure vent or relief device.';}
+   else if(n.includes('center')){size=[.018,.14,1.05];pos=[-.4+k*.5,.045,0];role='Internal structural cross-member.';}
+   else if(n.includes('shield')){size=[.85,.006,1.15];pos=[-1+k*.87,-.045,0];role='Underbody protective shield.';}
+   else if(n.includes('insulation')){size=[.40,.003,.44];pos=[-.65+(k%4)*.5,-.02,k%2?.3:-.3];material='Insulating sheet, illustrative';role='Separates conductive enclosure surfaces from components.';}
+   else if(n.includes('access panel')){size=[.12,.008,.11];pos=[-1.24+k*.15,.205,.45];cover=true;role='Conceptual access opening cover.';}
+   else{geometry=bracket();pos=[-.9+k*.55,.03,k%2?.58:-.58];role='Pack mounting bracket.';}
+  } else {
+   const relay=path.includes('relay box'),secondary=path.includes('2nd relay'),bms=path.includes('bms master'),fuse=path.startsWith('electrical parts/fuse');
+   const anchor=relay?[secondary?.35:-.45,0]:bms?[.9,0]:fuse?[-1.2,.43]:null;
+   if(anchor){const [x,z]=anchor;pos=[x+(k%5-2)*.042,.06+Math.floor(k/5)*.018,z+(k%3-1)*.035];
+    if(n.includes('housing')||n.includes('box cover')){geometry=tray(bms?.18:.29,.075,.18);pos=[x,n.includes('top')||n.includes('cover')?.19:.045,z];cover=n.includes('top')||n.includes('cover');role='Electrical enclosure.';material='Polymer, illustrative';}
+    else if(n.includes('busbar')){size=[.055,.004,.015];role='Short electrical distribution bar.';material='Copper, illustrative';}
+    else if(n.includes('pcb')||n.includes('circuit board')){size=[.07,.003,.055];role='Represents monitoring or control circuitry.';material='Circuit board, illustrative';}
+    else if(n.includes('fan')){geometry=fan();role='Symbolic electronics ventilation fan.';}
+    else if(n.includes('harness')||n.includes('cable')||n.includes('to precharge')){geometry=pipe(.09,.0025);role='Symbolic local wiring connection.';}
+    else if(n.includes('support')||n.includes('bracket')){geometry=bracket();role='Mechanical support within the electrical assembly.';}
+    else if(n.includes('relay')||n.includes('contactor')){size=[.035,.038,.035];role='Symbolic controlled switching device, not a functioning circuit.';}
+    else if(n.includes('fuse')||n.includes('resistor')){geometry=new T.CylinderGeometry(.007,.007,.037,12);geometry.rotateZ(Math.PI/2);role='Symbolic protection or precharge component.';}
+    else if(n.includes('pad')||n.includes('paste')){size=[.04,.002,.035];role='Thermal interface pad.';}
+    else if(n.includes('cover')){size=[.06,.004,.05];cover=true;role='Electrical protection cover.';}
+    else if(n.includes('sensor')){size=[.015,.014,.018];role='Symbolic sensing element.';}
+   }else if(path.includes('hv busbars')){pos=[-.95+k*.085,.17,0];if(n.includes('bracket')){geometry=bracket();role='HV busbar mounting support.';}else{geometry=mergeGeometries([cube([.07,.004,.025]),cube([.025,.004,.08],[.025,0,.045])]);role='Symbolic pack-level current distribution link.';material='Copper, illustrative';}}
+   else if(n.includes('harness')){geometry=pipe(1.85,.005);pos=[-.1,.165,k%2?.48:-.48];role='Symbolic pack monitoring harness.';}
+   else if(n.includes('connector')){pos=[1.265,.055+(k%3)*.035,-.44+(parts.filter(p=>p.name.toLowerCase().includes('connector')).length%10)*.085];geometry=n.includes('support')?bracket():new T.CylinderGeometry(.015,.015,.04,12).rotateZ(Math.PI/2);role='Conceptual HV connection interface.';material='Polymer and conductor, illustrative';}
+  }
+  geometry=geometry||cube(size);geometry.computeBoundingBox();
+  const dimensions=geometry.boundingBox.getSize(new T.Vector3()).toArray();
+  const mesh=new T.Mesh(geometry,new T.MeshStandardMaterial({color:palette[group],metalness:group==='Electrical'?.35:.15,roughness:.5}));mesh.position.set(...pos);scene.add(mesh);
+  const p={...item,group,hierarchy:[item.group,...item.path],mesh,dimensions,base:mesh.position.clone(),offset:new T.Vector3(pos[0]*.22,cover?.75:detail?.3+((k%4)*.07):group==='Electrical'?.5:group==='Thermal'?-.18:-.25,pos[2]*.4),description:role,material,cover,detail,assembly,visible:!cover};mesh.userData.part=p;mesh.visible=p.visible;parts.push(p);
+ }
+ const cellGeometry=new T.CylinderGeometry(.0105,.0105,.07,12);
+ MODULES.forEach(([x,z],m)=>{for(let layer=0;layer<2;layer++){const mesh=new T.InstancedMesh(cellGeometry,new T.MeshStandardMaterial({color:palette.Cells,roughness:.4,metalness:.4}),192);const dummy=new T.Object3D();let i=0;for(let r=0;r<12;r++)for(let c=0;c<16;c++){dummy.position.set((c-7.5)*.023+(r%2)*.0115,layer?.121:.043,(r-5.5)*.021);dummy.updateMatrix();mesh.setMatrixAt(i++,dummy.matrix)}mesh.position.set(x,0,z);mesh.computeBoundingBox();mesh.computeBoundingSphere();scene.add(mesh);const p={key:`cells-${m}-${layer}`,name:`Module ${m+1} ${layer?'upper':'lower'} cells`,group:'Cells',hierarchy:['Cells',`Module ${m+1}`],mesh,dimensions:[.378,.07,.252],base:mesh.position.clone(),offset:new T.Vector3(x*.22,layer?.62:-.10,z*.4),description:'192 generic cylinders in a 16 × 12 staggered layer. Authored 21 × 70 mm envelope; no source cell geometry.',material:'Mixed cell materials, unspecified chemistry',detail:m===0,visible:true};mesh.userData.part=p;parts.push(p)}});
+ return parts;
+}

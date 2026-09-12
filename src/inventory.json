@@ -1,0 +1,2050 @@
+[
+  {
+    "key": "component-001",
+    "name": "Busbar 1 1",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "2nd Relay Box",
+      "Busbars",
+      "Busbar 1"
+    ]
+  },
+  {
+    "key": "component-002",
+    "name": "Busbar 2 1",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "2nd Relay Box",
+      "Busbars",
+      "Busbar 2"
+    ]
+  },
+  {
+    "key": "component-003",
+    "name": "Busbar 3 1",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "2nd Relay Box",
+      "Busbars",
+      "Busbar 3"
+    ]
+  },
+  {
+    "key": "component-004",
+    "name": "Busbar 4 1",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "2nd Relay Box",
+      "Busbars",
+      "Busbar 4"
+    ]
+  },
+  {
+    "key": "component-005",
+    "name": "Busbar 5 1",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "2nd Relay Box",
+      "Busbars",
+      "Busbar 5"
+    ]
+  },
+  {
+    "key": "component-006",
+    "name": "Busbar 6 1",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "2nd Relay Box",
+      "Busbars",
+      "Busbar 6"
+    ]
+  },
+  {
+    "key": "component-007",
+    "name": "Busbar 7 1",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "2nd Relay Box",
+      "Busbars",
+      "Busbar 7"
+    ]
+  },
+  {
+    "key": "component-008",
+    "name": "Busbar protection",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "2nd Relay Box",
+      "Busbars",
+      "Busbar Protection"
+    ]
+  },
+  {
+    "key": "component-009",
+    "name": "Busbar support",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "2nd Relay Box",
+      "Busbars",
+      "Busbar Support"
+    ]
+  },
+  {
+    "key": "component-010",
+    "name": "Fan 1",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "2nd Relay Box",
+      "Fan"
+    ]
+  },
+  {
+    "key": "component-011",
+    "name": "Fuse circuit board 1",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "2nd Relay Box",
+      "Fuse Circuit Board 1"
+    ]
+  },
+  {
+    "key": "component-012",
+    "name": "H2 sensor",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "2nd Relay Box",
+      "H2 Sensor"
+    ]
+  },
+  {
+    "key": "component-013",
+    "name": "Hvil contactor",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "2nd Relay Box",
+      "HVIL Contactor"
+    ]
+  },
+  {
+    "key": "component-014",
+    "name": "Housing bottom 1",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "2nd Relay Box",
+      "Housing",
+      "Housing Bottom"
+    ]
+  },
+  {
+    "key": "component-015",
+    "name": "Housing top 1",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "2nd Relay Box",
+      "Housing",
+      "Housing Top"
+    ]
+  },
+  {
+    "key": "component-016",
+    "name": "Main negative relay 1",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "2nd Relay Box",
+      "Main Negative Relay"
+    ]
+  },
+  {
+    "key": "component-017",
+    "name": "Main negative relay 2",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "2nd Relay Box",
+      "Main Negative Relay"
+    ]
+  },
+  {
+    "key": "component-018",
+    "name": "Main negative relay 3",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "2nd Relay Box",
+      "Main Negative Relay"
+    ]
+  },
+  {
+    "key": "component-019",
+    "name": "Pcb 1 1",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "2nd Relay Box",
+      "PCBs",
+      "PCB 1"
+    ]
+  },
+  {
+    "key": "component-020",
+    "name": "Precharge resistor pcb support",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "2nd Relay Box",
+      "Precharge Resistor PCB Support"
+    ]
+  },
+  {
+    "key": "component-021",
+    "name": "Relay box cover",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "2nd Relay Box",
+      "Relay Box Cover"
+    ]
+  },
+  {
+    "key": "component-022",
+    "name": "Relay support 1",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "2nd Relay Box",
+      "Relay Support"
+    ]
+  },
+  {
+    "key": "component-023",
+    "name": "Shield-Bracket 1",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "2nd Relay Box",
+      "Shield-Bracket 1"
+    ]
+  },
+  {
+    "key": "component-024",
+    "name": "Thermal paste-Gap pad",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "2nd Relay Box",
+      "Thermal Paste-Gap Pad"
+    ]
+  },
+  {
+    "key": "component-025",
+    "name": "Thermal paste-Gap pad 2",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "2nd Relay Box",
+      "Thermal Paste-Gap Pad 2"
+    ]
+  },
+  {
+    "key": "component-026",
+    "name": "Fan wire harness",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "2nd Relay Box",
+      "Wire Harnesses",
+      "Fan Wire Harness"
+    ]
+  },
+  {
+    "key": "component-027",
+    "name": "Main relay box harness 1",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "2nd Relay Box",
+      "Wire Harnesses",
+      "Main Relay Box Harness"
+    ]
+  },
+  {
+    "key": "component-028",
+    "name": "Precharge resistor to precharge relay",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "2nd Relay Box",
+      "Wire Harnesses",
+      "Precharge Resistor To Precharge Relay"
+    ]
+  },
+  {
+    "key": "component-029",
+    "name": "Pcb 1 2",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "BMS Master ECU",
+      "Electronic Parts",
+      "PCB 1"
+    ]
+  },
+  {
+    "key": "component-030",
+    "name": "Housing bottom 2",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "BMS Master ECU",
+      "Mechanical Parts",
+      "Housing Parts",
+      "Housing Bottom"
+    ]
+  },
+  {
+    "key": "component-031",
+    "name": "Housing top 2",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "BMS Master ECU",
+      "Mechanical Parts",
+      "Housing Parts",
+      "Housing Top"
+    ]
+  },
+  {
+    "key": "component-032",
+    "name": "Connector housing 1",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "Connector Housing 1"
+    ]
+  },
+  {
+    "key": "component-033",
+    "name": "Connector support 1",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "Connector Support 1"
+    ]
+  },
+  {
+    "key": "component-034",
+    "name": "Connector support 2",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "Connector Support 2"
+    ]
+  },
+  {
+    "key": "component-035",
+    "name": "Connector support 3",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "Connector Support 3"
+    ]
+  },
+  {
+    "key": "component-036",
+    "name": "Fuse 1",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "Fuse",
+      "Fuse"
+    ]
+  },
+  {
+    "key": "component-037",
+    "name": "Fuse 2",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "Fuse",
+      "Fuse 2"
+    ]
+  },
+  {
+    "key": "component-038",
+    "name": "Fuse 3 1",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "Fuse",
+      "Fuse 3"
+    ]
+  },
+  {
+    "key": "component-039",
+    "name": "Fuse 3 2",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "Fuse",
+      "Fuse 3"
+    ]
+  },
+  {
+    "key": "component-040",
+    "name": "Fuse 4 1",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "Fuse",
+      "Fuse 4"
+    ]
+  },
+  {
+    "key": "component-041",
+    "name": "Fuse 4 2",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "Fuse",
+      "Fuse 4"
+    ]
+  },
+  {
+    "key": "component-042",
+    "name": "Fuse 4 3",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "Fuse",
+      "Fuse 4"
+    ]
+  },
+  {
+    "key": "component-043",
+    "name": "Housing",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "Fuse",
+      "Housing"
+    ]
+  },
+  {
+    "key": "component-044",
+    "name": "Upper fuse cover",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "Fuse",
+      "Upper Fuse Cover"
+    ]
+  },
+  {
+    "key": "component-045",
+    "name": "Busbar 1 2",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "HV Busbars",
+      "Busbar 1"
+    ]
+  },
+  {
+    "key": "component-046",
+    "name": "Busbar 2 2 1",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "HV Busbars",
+      "Busbar 2"
+    ]
+  },
+  {
+    "key": "component-047",
+    "name": "Busbar 2 2 2",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "HV Busbars",
+      "Busbar 2"
+    ]
+  },
+  {
+    "key": "component-048",
+    "name": "Busbar 2 2 3",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "HV Busbars",
+      "Busbar 2"
+    ]
+  },
+  {
+    "key": "component-049",
+    "name": "Busbar 2 2 4",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "HV Busbars",
+      "Busbar 2"
+    ]
+  },
+  {
+    "key": "component-050",
+    "name": "Busbar 2 2 5",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "HV Busbars",
+      "Busbar 2"
+    ]
+  },
+  {
+    "key": "component-051",
+    "name": "Busbar 2 2 6",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "HV Busbars",
+      "Busbar 2"
+    ]
+  },
+  {
+    "key": "component-052",
+    "name": "Busbar 3 2",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "HV Busbars",
+      "Busbar 3"
+    ]
+  },
+  {
+    "key": "component-053",
+    "name": "Busbar 4 2",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "HV Busbars",
+      "Busbar 4"
+    ]
+  },
+  {
+    "key": "component-054",
+    "name": "Busbar 5 2",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "HV Busbars",
+      "Busbar 5"
+    ]
+  },
+  {
+    "key": "component-055",
+    "name": "Busbar 6 2",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "HV Busbars",
+      "Busbar 6"
+    ]
+  },
+  {
+    "key": "component-056",
+    "name": "Busbar 7 2",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "HV Busbars",
+      "Busbar 7"
+    ]
+  },
+  {
+    "key": "component-057",
+    "name": "Busbar 8",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "HV Busbars",
+      "Busbar 8"
+    ]
+  },
+  {
+    "key": "component-058",
+    "name": "Busbar 9",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "HV Busbars",
+      "Busbar 9"
+    ]
+  },
+  {
+    "key": "component-059",
+    "name": "Bracket 1 1",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "HV Busbars",
+      "HV Busbar Bracket",
+      "Bracket 1"
+    ]
+  },
+  {
+    "key": "component-060",
+    "name": "Bracket 2 1 1",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "HV Busbars",
+      "HV Busbar Bracket",
+      "Bracket 2"
+    ]
+  },
+  {
+    "key": "component-061",
+    "name": "Bracket 2 1 2",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "HV Busbars",
+      "HV Busbar Bracket",
+      "Bracket 2"
+    ]
+  },
+  {
+    "key": "component-062",
+    "name": "Bracket 3 1",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "HV Busbars",
+      "HV Busbar Bracket",
+      "Bracket 3"
+    ]
+  },
+  {
+    "key": "component-063",
+    "name": "Bracket 4",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "HV Busbars",
+      "HV Busbar Bracket",
+      "Bracket 4"
+    ]
+  },
+  {
+    "key": "component-064",
+    "name": "Hv connector 1 1",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "HV Connector 1"
+    ]
+  },
+  {
+    "key": "component-065",
+    "name": "Hv connector 1 2",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "HV Connector 1"
+    ]
+  },
+  {
+    "key": "component-066",
+    "name": "Hv connector 1 3",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "HV Connector 1"
+    ]
+  },
+  {
+    "key": "component-067",
+    "name": "Hv connector 1 4",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "HV Connector 1"
+    ]
+  },
+  {
+    "key": "component-068",
+    "name": "Hv connector 1 5",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "HV Connector 1"
+    ]
+  },
+  {
+    "key": "component-069",
+    "name": "Hv connector 1 6",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "HV Connector 1"
+    ]
+  },
+  {
+    "key": "component-070",
+    "name": "Hv connector 2",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "HV Connector 2"
+    ]
+  },
+  {
+    "key": "component-071",
+    "name": "Hv connector 3",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "HV Connector 3"
+    ]
+  },
+  {
+    "key": "component-072",
+    "name": "Hv connector 4",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "HV Connector 4"
+    ]
+  },
+  {
+    "key": "component-073",
+    "name": "Hv connector 5",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "HV Connector 5"
+    ]
+  },
+  {
+    "key": "component-074",
+    "name": "Hv dummy connector",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "HV Dummy Connector"
+    ]
+  },
+  {
+    "key": "component-075",
+    "name": "Busbar 1 3",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "Relay Box",
+      "Busbars",
+      "Busbar 1"
+    ]
+  },
+  {
+    "key": "component-076",
+    "name": "Busbar 2 3",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "Relay Box",
+      "Busbars",
+      "Busbar 2"
+    ]
+  },
+  {
+    "key": "component-077",
+    "name": "Busbar 3 3",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "Relay Box",
+      "Busbars",
+      "Busbar 3"
+    ]
+  },
+  {
+    "key": "component-078",
+    "name": "Busbar 4 3",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "Relay Box",
+      "Busbars",
+      "Busbar 4"
+    ]
+  },
+  {
+    "key": "component-079",
+    "name": "Busbar 5 3 1",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "Relay Box",
+      "Busbars",
+      "Busbar 5"
+    ]
+  },
+  {
+    "key": "component-080",
+    "name": "Busbar 5 3 2",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "Relay Box",
+      "Busbars",
+      "Busbar 5"
+    ]
+  },
+  {
+    "key": "component-081",
+    "name": "Busbar 6 3",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "Relay Box",
+      "Busbars",
+      "Busbar 6"
+    ]
+  },
+  {
+    "key": "component-082",
+    "name": "Protection 1",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "Relay Box",
+      "Busbars",
+      "Protections",
+      "Protection 1"
+    ]
+  },
+  {
+    "key": "component-083",
+    "name": "Protection 2",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "Relay Box",
+      "Busbars",
+      "Protections",
+      "Protection 2"
+    ]
+  },
+  {
+    "key": "component-084",
+    "name": "Fan 2",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "Relay Box",
+      "Fan"
+    ]
+  },
+  {
+    "key": "component-085",
+    "name": "Fuse 2 1",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "Relay Box",
+      "Fuses",
+      "Fuse"
+    ]
+  },
+  {
+    "key": "component-086",
+    "name": "Fuse 2 2",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "Relay Box",
+      "Fuses",
+      "Fuse"
+    ]
+  },
+  {
+    "key": "component-087",
+    "name": "Fuse support",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "Relay Box",
+      "Fuses",
+      "Fuse Support"
+    ]
+  },
+  {
+    "key": "component-088",
+    "name": "Main housing",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "Relay Box",
+      "Housing",
+      "Main Housing"
+    ]
+  },
+  {
+    "key": "component-089",
+    "name": "Top housing",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "Relay Box",
+      "Housing",
+      "Top Housing"
+    ]
+  },
+  {
+    "key": "component-090",
+    "name": "Pcb 1 3",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "Relay Box",
+      "PCBs",
+      "PCB 1"
+    ]
+  },
+  {
+    "key": "component-091",
+    "name": "Main positive relay 1",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "Relay Box",
+      "Relays",
+      "Main Positive Relay"
+    ]
+  },
+  {
+    "key": "component-092",
+    "name": "Main positive relay 2",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "Relay Box",
+      "Relays",
+      "Main Positive Relay"
+    ]
+  },
+  {
+    "key": "component-093",
+    "name": "Main positive relay 3",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "Relay Box",
+      "Relays",
+      "Main Positive Relay"
+    ]
+  },
+  {
+    "key": "component-094",
+    "name": "Relay support 2",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "Relay Box",
+      "Relays",
+      "Relay Support"
+    ]
+  },
+  {
+    "key": "component-095",
+    "name": "Resistor",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "Relay Box",
+      "Resistor"
+    ]
+  },
+  {
+    "key": "component-096",
+    "name": "Temperature sensor",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "Relay Box",
+      "Temperature Sensor"
+    ]
+  },
+  {
+    "key": "component-097",
+    "name": "Gap pad 1",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "Relay Box",
+      "Thermal Paste-Gap Pad",
+      "Gap Pad 1"
+    ]
+  },
+  {
+    "key": "component-098",
+    "name": "Ground cable 1",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "Relay Box",
+      "Wire Harnesses",
+      "Ground Cable 1"
+    ]
+  },
+  {
+    "key": "component-099",
+    "name": "Main relay box harness 2",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "Relay Box",
+      "Wire Harnesses",
+      "Main Relay Box Harness"
+    ]
+  },
+  {
+    "key": "component-100",
+    "name": "Main wire harness",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "Wire Harnesses",
+      "Main Wire Harness"
+    ]
+  },
+  {
+    "key": "component-101",
+    "name": "Wire harness 2",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "Wire Harnesses",
+      "Wire Harness 2"
+    ]
+  },
+  {
+    "key": "component-102",
+    "name": "Wire harness 3",
+    "group": "Electrical",
+    "path": [
+      "Electrical Parts",
+      "Wire Harnesses",
+      "Wire Harness 3"
+    ]
+  },
+  {
+    "key": "component-103",
+    "name": "Pressure relief valve 1",
+    "group": "Structure",
+    "path": [
+      "Pressure Vent System",
+      "Pressure Relief Valve"
+    ]
+  },
+  {
+    "key": "component-104",
+    "name": "Pressure relief valve 2",
+    "group": "Structure",
+    "path": [
+      "Pressure Vent System",
+      "Pressure Relief Valve"
+    ]
+  },
+  {
+    "key": "component-105",
+    "name": "Pressure relief valve 2 1",
+    "group": "Structure",
+    "path": [
+      "Pressure Vent System",
+      "Pressure Relief Valve 2"
+    ]
+  },
+  {
+    "key": "component-106",
+    "name": "Pressure relief valve 2 2",
+    "group": "Structure",
+    "path": [
+      "Pressure Vent System",
+      "Pressure Relief Valve 2"
+    ]
+  },
+  {
+    "key": "component-107",
+    "name": "Pressure vent 1",
+    "group": "Structure",
+    "path": [
+      "Pressure Vent System",
+      "Pressure Vent"
+    ]
+  },
+  {
+    "key": "component-108",
+    "name": "Pressure vent 2",
+    "group": "Structure",
+    "path": [
+      "Pressure Vent System",
+      "Pressure Vent"
+    ]
+  },
+  {
+    "key": "component-109",
+    "name": "Pressure vent 3",
+    "group": "Structure",
+    "path": [
+      "Pressure Vent System",
+      "Pressure Vent"
+    ]
+  },
+  {
+    "key": "component-110",
+    "name": "Pressure vent 4",
+    "group": "Structure",
+    "path": [
+      "Pressure Vent System",
+      "Pressure Vent"
+    ]
+  },
+  {
+    "key": "component-111",
+    "name": "Pressure vent 5",
+    "group": "Structure",
+    "path": [
+      "Pressure Vent System",
+      "Pressure Vent"
+    ]
+  },
+  {
+    "key": "component-112",
+    "name": "Bracket 1 2",
+    "group": "Structure",
+    "path": [
+      "Structural Parts",
+      "Brackets",
+      "Bracket 1"
+    ]
+  },
+  {
+    "key": "component-113",
+    "name": "Bracket 2 2",
+    "group": "Structure",
+    "path": [
+      "Structural Parts",
+      "Brackets",
+      "Bracket 2"
+    ]
+  },
+  {
+    "key": "component-114",
+    "name": "Bracket 3 2 1",
+    "group": "Structure",
+    "path": [
+      "Structural Parts",
+      "Brackets",
+      "Bracket 3"
+    ]
+  },
+  {
+    "key": "component-115",
+    "name": "Bracket 3 2 2",
+    "group": "Structure",
+    "path": [
+      "Structural Parts",
+      "Brackets",
+      "Bracket 3"
+    ]
+  },
+  {
+    "key": "component-116",
+    "name": "Access panel",
+    "group": "Structure",
+    "path": [
+      "Structural Parts",
+      "Enclosures",
+      "Access Panels",
+      "Access Panel"
+    ]
+  },
+  {
+    "key": "component-117",
+    "name": "Second access panel 1",
+    "group": "Structure",
+    "path": [
+      "Structural Parts",
+      "Enclosures",
+      "Access Panels",
+      "Second Access Panel"
+    ]
+  },
+  {
+    "key": "component-118",
+    "name": "Second access panel 2",
+    "group": "Structure",
+    "path": [
+      "Structural Parts",
+      "Enclosures",
+      "Access Panels",
+      "Second Access Panel"
+    ]
+  },
+  {
+    "key": "component-119",
+    "name": "Enclosure bottom",
+    "group": "Structure",
+    "path": [
+      "Structural Parts",
+      "Enclosures",
+      "Enclosure Bottom"
+    ]
+  },
+  {
+    "key": "component-120",
+    "name": "Enclosure top",
+    "group": "Structure",
+    "path": [
+      "Structural Parts",
+      "Enclosures",
+      "Enclosure Top"
+    ]
+  },
+  {
+    "key": "component-121",
+    "name": "Second enclosure bottom",
+    "group": "Structure",
+    "path": [
+      "Structural Parts",
+      "Enclosures",
+      "Second Enclosure Bottom"
+    ]
+  },
+  {
+    "key": "component-122",
+    "name": "Insulation sheet 1 1",
+    "group": "Structure",
+    "path": [
+      "Structural Parts",
+      "Insulation Sheet",
+      "Insulation Sheet 1"
+    ]
+  },
+  {
+    "key": "component-123",
+    "name": "Insulation sheet 1 2",
+    "group": "Structure",
+    "path": [
+      "Structural Parts",
+      "Insulation Sheet",
+      "Insulation Sheet 1"
+    ]
+  },
+  {
+    "key": "component-124",
+    "name": "Insulation sheet 1 3",
+    "group": "Structure",
+    "path": [
+      "Structural Parts",
+      "Insulation Sheet",
+      "Insulation Sheet 1"
+    ]
+  },
+  {
+    "key": "component-125",
+    "name": "Insulation sheet 1 4",
+    "group": "Structure",
+    "path": [
+      "Structural Parts",
+      "Insulation Sheet",
+      "Insulation Sheet 1"
+    ]
+  },
+  {
+    "key": "component-126",
+    "name": "Insulation sheet 2",
+    "group": "Structure",
+    "path": [
+      "Structural Parts",
+      "Insulation Sheet",
+      "Insulation Sheet 2"
+    ]
+  },
+  {
+    "key": "component-127",
+    "name": "Insulation sheet 3",
+    "group": "Structure",
+    "path": [
+      "Structural Parts",
+      "Insulation Sheet",
+      "Insulation Sheet 3"
+    ]
+  },
+  {
+    "key": "component-128",
+    "name": "Insulator-Shield upper",
+    "group": "Structure",
+    "path": [
+      "Structural Parts",
+      "Insulator-Shield Upper"
+    ]
+  },
+  {
+    "key": "component-129",
+    "name": "Shield 1",
+    "group": "Structure",
+    "path": [
+      "Structural Parts",
+      "Shield",
+      "Shield 1"
+    ]
+  },
+  {
+    "key": "component-130",
+    "name": "Shield 2",
+    "group": "Structure",
+    "path": [
+      "Structural Parts",
+      "Shield",
+      "Shield 2"
+    ]
+  },
+  {
+    "key": "component-131",
+    "name": "Shield 3",
+    "group": "Structure",
+    "path": [
+      "Structural Parts",
+      "Shield",
+      "Shield 3"
+    ]
+  },
+  {
+    "key": "component-132",
+    "name": "Center 1",
+    "group": "Structure",
+    "path": [
+      "Structural Parts",
+      "Support",
+      "Center"
+    ]
+  },
+  {
+    "key": "component-133",
+    "name": "Center 2",
+    "group": "Structure",
+    "path": [
+      "Structural Parts",
+      "Support",
+      "Center"
+    ]
+  },
+  {
+    "key": "component-134",
+    "name": "Center 3",
+    "group": "Structure",
+    "path": [
+      "Structural Parts",
+      "Support",
+      "Center"
+    ]
+  },
+  {
+    "key": "component-135",
+    "name": "Coolant quick disconnect support 1",
+    "group": "Structure",
+    "path": [
+      "Thermal System Parts",
+      "Coolant Quick Disconnect Support"
+    ]
+  },
+  {
+    "key": "component-136",
+    "name": "Coolant quick disconnect support 2",
+    "group": "Structure",
+    "path": [
+      "Thermal System Parts",
+      "Coolant Quick Disconnect Support"
+    ]
+  },
+  {
+    "key": "component-137",
+    "name": "Coolant quick disconnect support 3",
+    "group": "Structure",
+    "path": [
+      "Thermal System Parts",
+      "Coolant Quick Disconnect Support"
+    ]
+  },
+  {
+    "key": "component-138",
+    "name": "Coolant quick disconnect support 4",
+    "group": "Structure",
+    "path": [
+      "Thermal System Parts",
+      "Coolant Quick Disconnect Support"
+    ]
+  },
+  {
+    "key": "component-139",
+    "name": "Hose 1",
+    "group": "Structure",
+    "path": [
+      "Thermal System Parts",
+      "Hose",
+      "Hose 1"
+    ]
+  },
+  {
+    "key": "component-140",
+    "name": "Hose 2",
+    "group": "Structure",
+    "path": [
+      "Thermal System Parts",
+      "Hose",
+      "Hose 2"
+    ]
+  },
+  {
+    "key": "component-141",
+    "name": "Cell separator 1",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Cell Separator"
+    ]
+  },
+  {
+    "key": "component-142",
+    "name": "Cell separator 10",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Cell Separator"
+    ]
+  },
+  {
+    "key": "component-143",
+    "name": "Cell separator 2",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Cell Separator"
+    ]
+  },
+  {
+    "key": "component-144",
+    "name": "Cell separator 3",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Cell Separator"
+    ]
+  },
+  {
+    "key": "component-145",
+    "name": "Cell separator 4",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Cell Separator"
+    ]
+  },
+  {
+    "key": "component-146",
+    "name": "Cell separator 5",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Cell Separator"
+    ]
+  },
+  {
+    "key": "component-147",
+    "name": "Cell separator 6",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Cell Separator"
+    ]
+  },
+  {
+    "key": "component-148",
+    "name": "Cell separator 7",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Cell Separator"
+    ]
+  },
+  {
+    "key": "component-149",
+    "name": "Cell separator 8",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Cell Separator"
+    ]
+  },
+  {
+    "key": "component-150",
+    "name": "Cell separator 9",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Cell Separator"
+    ]
+  },
+  {
+    "key": "component-151",
+    "name": "Cell to cell interconnect",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Cell To Cell Interconnect",
+      "Cell To Cell Interconnect"
+    ]
+  },
+  {
+    "key": "component-152",
+    "name": "Cell to cell interconnect 2 1",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Cell To Cell Interconnect",
+      "Cell To Cell Interconnect 2"
+    ]
+  },
+  {
+    "key": "component-153",
+    "name": "Cell to cell interconnect 2 2",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Cell To Cell Interconnect",
+      "Cell To Cell Interconnect 2"
+    ]
+  },
+  {
+    "key": "component-154",
+    "name": "Cell to cell interconnect 2 3",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Cell To Cell Interconnect",
+      "Cell To Cell Interconnect 2"
+    ]
+  },
+  {
+    "key": "component-155",
+    "name": "Cell to cell interconnect 2 4",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Cell To Cell Interconnect",
+      "Cell To Cell Interconnect 2"
+    ]
+  },
+  {
+    "key": "component-156",
+    "name": "Cell to cell interconnect 3 1",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Cell To Cell Interconnect",
+      "Cell To Cell Interconnect 3"
+    ]
+  },
+  {
+    "key": "component-157",
+    "name": "Cell to cell interconnect 3 2",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Cell To Cell Interconnect",
+      "Cell To Cell Interconnect 3"
+    ]
+  },
+  {
+    "key": "component-158",
+    "name": "Cell to cell interconnect 3 3",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Cell To Cell Interconnect",
+      "Cell To Cell Interconnect 3"
+    ]
+  },
+  {
+    "key": "component-159",
+    "name": "Cell to cell interconnect 3 4",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Cell To Cell Interconnect",
+      "Cell To Cell Interconnect 3"
+    ]
+  },
+  {
+    "key": "component-160",
+    "name": "Cell to cell interconnect 3 5",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Cell To Cell Interconnect",
+      "Cell To Cell Interconnect 3"
+    ]
+  },
+  {
+    "key": "component-161",
+    "name": "Cell to cell interconnect 3 6",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Cell To Cell Interconnect",
+      "Cell To Cell Interconnect 3"
+    ]
+  },
+  {
+    "key": "component-162",
+    "name": "Cell to cell interconnect 4 1",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Cell To Cell Interconnect",
+      "Cell To Cell Interconnect 4"
+    ]
+  },
+  {
+    "key": "component-163",
+    "name": "Cell to cell interconnect 4 2",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Cell To Cell Interconnect",
+      "Cell To Cell Interconnect 4"
+    ]
+  },
+  {
+    "key": "component-164",
+    "name": "Cell to cell interconnect 4 3",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Cell To Cell Interconnect",
+      "Cell To Cell Interconnect 4"
+    ]
+  },
+  {
+    "key": "component-165",
+    "name": "Cell to cell interconnect 4 4",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Cell To Cell Interconnect",
+      "Cell To Cell Interconnect 4"
+    ]
+  },
+  {
+    "key": "component-166",
+    "name": "Cell to cell interconnect support 1",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Cell To Cell Interconnect Support"
+    ]
+  },
+  {
+    "key": "component-167",
+    "name": "Cell to cell interconnect support 2",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Cell To Cell Interconnect Support"
+    ]
+  },
+  {
+    "key": "component-168",
+    "name": "Cooling plate",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Cooling Plate"
+    ]
+  },
+  {
+    "key": "component-169",
+    "name": "Side cover 1 1",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Cover",
+      "Side Cover 1"
+    ]
+  },
+  {
+    "key": "component-170",
+    "name": "Side cover 1 2",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Cover",
+      "Side Cover 1"
+    ]
+  },
+  {
+    "key": "component-171",
+    "name": "Side cover 1 3",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Cover",
+      "Side Cover 1"
+    ]
+  },
+  {
+    "key": "component-172",
+    "name": "Side cover 1 4",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Cover",
+      "Side Cover 1"
+    ]
+  },
+  {
+    "key": "component-173",
+    "name": "Side cover 2 1",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Cover",
+      "Side Cover 2"
+    ]
+  },
+  {
+    "key": "component-174",
+    "name": "Side cover 2 2",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Cover",
+      "Side Cover 2"
+    ]
+  },
+  {
+    "key": "component-175",
+    "name": "Side cover 2 3",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Cover",
+      "Side Cover 2"
+    ]
+  },
+  {
+    "key": "component-176",
+    "name": "Side cover 2 4",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Cover",
+      "Side Cover 2"
+    ]
+  },
+  {
+    "key": "component-177",
+    "name": "Top 1",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Cover",
+      "Top"
+    ]
+  },
+  {
+    "key": "component-178",
+    "name": "Top 2",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Cover",
+      "Top"
+    ]
+  },
+  {
+    "key": "component-179",
+    "name": "End plate 1",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "End Plate"
+    ]
+  },
+  {
+    "key": "component-180",
+    "name": "End plate 2",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "End Plate"
+    ]
+  },
+  {
+    "key": "component-181",
+    "name": "Flex pcb 1",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Flex PCB",
+      "Flex PCB 1"
+    ]
+  },
+  {
+    "key": "component-182",
+    "name": "Flex pcb 2",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Flex PCB",
+      "Flex PCB 2"
+    ]
+  },
+  {
+    "key": "component-183",
+    "name": "Insulation sheet 1 1",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Insulation Sheets",
+      "Insulation Sheet 1"
+    ]
+  },
+  {
+    "key": "component-184",
+    "name": "Insulation sheet 1 2",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Insulation Sheets",
+      "Insulation Sheet 1"
+    ]
+  },
+  {
+    "key": "component-185",
+    "name": "Cover",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Module Control Unit",
+      "Cover"
+    ]
+  },
+  {
+    "key": "component-186",
+    "name": "Pcb 1",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Module Control Unit",
+      "PCB 1"
+    ]
+  },
+  {
+    "key": "component-187",
+    "name": "Upper support",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Support",
+      "Upper Support"
+    ]
+  },
+  {
+    "key": "component-188",
+    "name": "Temperature sensor",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Temperature Sensor"
+    ]
+  },
+  {
+    "key": "component-189",
+    "name": "Terminal 1",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Terminal 1"
+    ]
+  },
+  {
+    "key": "component-190",
+    "name": "Terminal 2",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Terminal 2"
+    ]
+  },
+  {
+    "key": "component-191",
+    "name": "Thermal paste in module",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Thermal Paste In Module"
+    ]
+  },
+  {
+    "key": "component-192",
+    "name": "Wire harness 1",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Wire Harness",
+      "Wire Harness 1"
+    ]
+  },
+  {
+    "key": "component-193",
+    "name": "Cell module large assembly 1",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large Assembly"
+    ]
+  },
+  {
+    "key": "component-194",
+    "name": "Cell module large assembly 2",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large Assembly"
+    ]
+  },
+  {
+    "key": "component-195",
+    "name": "Cell module large assembly 3",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large Assembly"
+    ]
+  },
+  {
+    "key": "component-196",
+    "name": "Cell module large assembly 4",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large Assembly"
+    ]
+  },
+  {
+    "key": "component-197",
+    "name": "Cell module large assembly 5",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large Assembly"
+    ]
+  },
+  {
+    "key": "component-198",
+    "name": "Cell module large assembly 6",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large Assembly"
+    ]
+  },
+  {
+    "key": "component-199",
+    "name": "Cell module large assembly 7",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large Assembly"
+    ]
+  },
+  {
+    "key": "component-200",
+    "name": "Cell module large assembly 8",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large Assembly"
+    ]
+  }
+]
