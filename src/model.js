@@ -14,15 +14,29 @@ function panel(w,d,thickness){
  points.forEach(([x,z],i)=>i?outline.lineTo(x,z):outline.moveTo(x,z));outline.closePath();
  return new T.ExtrudeGeometry(outline,{depth:thickness,bevelEnabled:false}).rotateX(Math.PI/2).toNonIndexed();
 }
+// The lid underside and enclosure rim share one authored mating height.
+const RIM_Y=.245, LID_THICKNESS=.012;
+function pressedPad(w,d,h){
+ const r=Math.min(.025,w/4,d/4);const shape=new T.Shape();shape.moveTo(-w/2+r,-d/2);shape.lineTo(w/2-r,-d/2);shape.quadraticCurveTo(w/2,-d/2,w/2,-d/2+r);shape.lineTo(w/2,d/2-r);shape.quadraticCurveTo(w/2,d/2,w/2-r,d/2);shape.lineTo(-w/2+r,d/2);shape.quadraticCurveTo(-w/2,d/2,-w/2,d/2-r);shape.lineTo(-w/2,-d/2+r);shape.quadraticCurveTo(-w/2,-d/2,-w/2+r,-d/2);
+ return new T.ExtrudeGeometry(shape,{depth:h,bevelEnabled:true,bevelThickness:.006,bevelSize:.014,bevelSegments:3,steps:1,curveSegments:5}).rotateX(-Math.PI/2);
+}
 function packLid(){
- const shapes=[panel(2.74,1.20,.012)];
- for(const z of [-.39,.39])for(const x of [-.77,-.16,.45,.99])shapes.push(cube([.43,.024,.19],[x,.012,z]));
- shapes.push(cube([2.40,.028,.07],[.03,.014,0]));
- for(const z of [-.57,.57]){shapes.push(cube([2.48,.013,.026],[0,.006,z]));for(let i=0;i<12;i++)shapes.push(new T.CylinderGeometry(.012,.012,.007,10).translate(-1.2+i*.218,.008,z));}
- for(const x of [-1.19,1.21])shapes.push(cube([.045,.022,1.01],[x,.011,0]));
+ const shapes=[panel(2.74,1.20,LID_THICKNESS)];
+ for(const z of [-.34,.34])for(const x of [-.77,-.16,.45,.99]){
+  shapes.push(pressedPad(.42,.30,.008).translate(x,0,z));
+  shapes.push(pressedPad(.34,.025,.009).translate(x,.012,z+.075));
+ }
+ shapes.push(pressedPad(2.38,.085,.014).translate(.01,0,0));
+ for(const z of [-.57,.57]){shapes.push(cube([2.48,.006,.022],[0,0,z]));for(let i=0;i<12;i++)shapes.push(new T.CylinderGeometry(.009,.009,.004,10).translate(-1.2+i*.218,.003,z));}
+ for(const z of [-.30,.30])for(const angle of [-.6,.6])shapes.push(pressedPad(.30,.025,.006).rotateY(angle).translate(-1.08,.005,z));
  return mergeGeometries(shapes.map(g=>g.index?g.toNonIndexed():g));
 }
-function packTray(){const shapes=[panel(2.74,1.20,.012),tray(2.60,.19,1.12).translate(0,.085,0)];for(let i=0;i<10;i++)for(const z of [-.60,.60])shapes.push(cube([.085,.012,.065],[-1.14+i*.25,0,z]));return mergeGeometries(shapes.map(g=>g.index?g.toNonIndexed():g));}
+function packTray(){
+ const height=RIM_Y+.025;
+ const shapes=[panel(2.74,1.20,.012),tray(2.60,height,1.12).translate(0,height/2,0)];
+ for(let i=0;i<10;i++)for(const z of [-.60,.60])shapes.push(cube([.085,.012,.065],[-1.14+i*.25,0,z]));
+ return mergeGeometries(shapes.map(g=>g.index?g.toNonIndexed():g));
+}
 function harness(){
  const tube=points=>new T.TubeGeometry(new T.CatmullRomCurve3(points.map(p=>new T.Vector3(...p)),false,'centripetal'),48,.006,8,false);
  const shapes=[tube([[-1.23,0,-.12],[-1.1,0,0],[-.8,0,.04],[.65,0,.04],[1.05,0,0],[1.19,0,-.13]])];
@@ -61,7 +75,7 @@ export function buildModel(scene){
    else {geometry=bracket();pos=[x,.17,z+.18];role='Module mechanical support.';}
   } else if(item.group==='Structure'){
    if(n==='enclosure bottom'){geometry=packTray();pos=[-.12,-.025,0];material='Aluminum, illustrative';role='Protective pack enclosure with perimeter walls.';}
-   else if(n==='enclosure top'||n.includes('insulator-shield')){geometry=n==='enclosure top'?packLid():panel(2.67,1.12,.004);pos=[-.12,n==='enclosure top'?.275:.265,0];cover=true;role='Upper pack protection and insulation.';}
+   else if(n==='enclosure top'||n.includes('insulator-shield')){geometry=n==='enclosure top'?packLid():panel(2.67,1.12,.004);pos=[-.12,n==='enclosure top'?RIM_Y+LID_THICKNESS:RIM_Y-.006,0];cover=true;role='Upper pack protection and insulation.';}
    else if(n==='second enclosure bottom'){geometry=tray(.4,.06,.4);pos=[-1.15,-.005,0];role='Secondary module support pan.';}
    else if(n.includes('hose')){geometry=pipe(2.25,.01);pos=[-.05,.02,k%2?.53:-.53];group='Thermal';role='Conceptual coolant manifold route.';material='Elastomer hose, illustrative';}
    else if(n.includes('quick disconnect')){geometry=bracket();pos=[-.85+k*.5,.04,.53];group='Thermal';role='Supports a coolant connection.';}
@@ -69,13 +83,13 @@ export function buildModel(scene){
    else if(n.includes('center')){size=[.018,.14,1.05];pos=[-.4+k*.5,.045,0];role='Internal structural cross-member.';}
    else if(n.includes('shield')){size=[.85,.006,1.15];pos=[-1+k*.87,-.045,0];role='Underbody protective shield.';}
    else if(n.includes('insulation')){size=[.40,.003,.44];pos=[-.65+(k%4)*.5,-.02-Math.floor(k/4)*.006,k%2?.3:-.3];material='Insulating sheet, illustrative';role='Separates conductive enclosure surfaces from components.';}
-   else if(n.includes('access panel')){size=[.12,.008,.11];pos=[-1.24+k*.15,.285,.45];cover=true;role='Conceptual access opening cover.';}
+   else if(n.includes('access panel')){size=[.12,.008,.11];pos=[-1.24+k*.15,RIM_Y+LID_THICKNESS+.009,.45];cover=true;role='Conceptual access opening cover.';}
    else{geometry=bracket();pos=[-.9+k*.55,.03,k%2?.58:-.58];role='Pack mounting bracket.';}
   } else {
    const relay=path.includes('relay box'),secondary=path.includes('2nd relay'),bms=path.includes('bms master'),fuse=path.startsWith('electrical parts/fuse');
    const anchor=relay?[secondary?.35:-.45,0]:bms?[.9,0]:fuse?[-1.2,.43]:null;
    if(anchor){const [x,z]=anchor;pos=[x+(k%5-2)*.042,.06+Math.floor(k/5)*.018,z+(k%3-1)*.035];
-    if(n.includes('housing')||n.includes('box cover')){geometry=tray(bms?.18:.29,.075,.18);pos=[x,n.includes('box cover')?.235:n.includes('top')||n.includes('cover')?.19:.045,z];cover=n.includes('top')||n.includes('cover');role='Electrical enclosure.';material='Polymer, illustrative';}
+    if(n.includes('housing')||n.includes('box cover')){geometry=tray(bms?.18:.29,.075,.18);pos=[x,n.includes('box cover')?.21:n.includes('top')||n.includes('cover')?.19:.045,z];cover=n.includes('top')||n.includes('cover');role='Electrical enclosure.';material='Polymer, illustrative';}
     else if(n.includes('protection')){size=[.06,.008,.026];material='Insulating polymer, illustrative';role='Insulating protection over a conductor.';}
     else if(n.includes('support')||n.includes('bracket')){geometry=bracket();role='Mechanical support within the electrical assembly.';}
     else if(n.includes('harness')||n.includes('cable')||n.includes('to precharge')){geometry=pipe(.09,.0025);role='Symbolic local wiring connection.';}
