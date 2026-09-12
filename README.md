@@ -10,10 +10,12 @@ Run `npm install` and `npm run dev`. Build using `npm run build`. GitHub Actions
 
 ## Expanded assembly coverage
 
-The viewer now has 200 procedural component representations, guided by the detailed workspace's component labels and hierarchy. `src/inventory.json` contains only names, hierarchy labels, categories, and new concept identifiers. It does not contain source coordinates, bounds, geometry, materials, weights, or BOM values. `src/model.js` authors all shapes and dimensions from primitives.
+The viewer now has 201 procedural component representations, guided by the detailed workspace's component labels and hierarchy. `src/inventory.json` contains only names, hierarchy labels, categories, and new concept identifiers. It does not contain source coordinates, bounds, geometry, materials, weights, or BOM values. `src/model.js` authors all shapes and dimensions from primitives.
 
 There are nine conceptual module locations, with eighteen instanced cell layers and 3,456 illustrative cells. Eight module assemblies are shell representations; one module exposes the detailed component breakdown. This is inventory-level coverage, not replication of every internal feature in each source mesh. Holes, seals, fasteners, routing, and internal features are only present where explicitly modeled. Fitting, clearances, materials, mass, circuit topology, and thermal performance are not validated.
 
 The assembly browser follows the nested grouping and starts collapsed. Search expands matching paths, selection opens the component's ancestors, and each component can be hidden, isolated, or focused. Module detail isolates the detailed module. Annotations remain off by default.
 
 Changing geometry and dimensions does not by itself establish rights to redistribute source-derived labels or arrangement. This project makes no claim of licensing clearance or independent clean-room provenance.
+
+The component audit covers every source inventory entry with one conceptual representation per entry, including the standalone cell. The Parts catalog lays out all 201 representations for individual inspection. Shapes and sizes remain illustrative; embedded details within source meshes are not reproduced.

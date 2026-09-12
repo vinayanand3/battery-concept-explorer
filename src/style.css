@@ -3,3 +3,5 @@
 header button{color:#354c39} .stage canvas{outline:none}
 
 .branch{padding-left:10px;border-left:1px solid #e3e8db;margin-left:8px}.tree summary{font-size:11px;gap:4px}.tree .count{flex-shrink:0}.tree details{margin-bottom:3px}
+
+.stage.catalog .bottom-tools .view-buttons,.stage.catalog .bottom-tools .range-label,.stage.catalog #explode{display:none}.stage.catalog .bottom-tools{bottom:12px}

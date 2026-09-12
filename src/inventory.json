@@ -2046,5 +2046,15 @@
       "Sub-Pack 1",
       "Cell Module Large Assembly"
     ]
+  },
+  {
+    "key": "component-201",
+    "name": "Cell",
+    "group": "Modules",
+    "path": [
+      "Sub-Pack 1",
+      "Cell Module Large",
+      "Cell"
+    ]
   }
 ]
