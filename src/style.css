@@ -5,3 +5,5 @@ header button{color:#354c39} .stage canvas{outline:none}
 .branch{padding-left:10px;border-left:1px solid #e3e8db;margin-left:8px}.tree summary{font-size:11px;gap:4px}.tree .count{flex-shrink:0}.tree details{margin-bottom:3px}
 
 .stage.catalog .bottom-tools .view-buttons,.stage.catalog .bottom-tools .range-label,.stage.catalog #explode{display:none}.stage.catalog .bottom-tools{bottom:12px}
+
+.concept-legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;margin-top:12px}.concept-legend span{display:flex;align-items:center;gap:6px}.concept-legend i{width:8px;height:8px;border-radius:50%}.bottom-tools{width:380px;max-width:calc(100% - 32px)}.bottom-tools .small-row{flex-wrap:wrap}.bottom-tools .small-row button{flex:1 1 28%}.actions{flex-wrap:wrap}

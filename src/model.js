@@ -8,6 +8,27 @@ export const MODULES=[[-.65,.30],[-.15,.30],[.35,.30],[.85,.30],[-.65,-.30],[-.1
 const palette={Structure:0x94a38b,Modules:0x608155,Cells:0xb9cbc8,Thermal:0x579cab,Electrical:0xd2934f};
 const cube=(size,position=[0,0,0])=>new T.BoxGeometry(...size).translate(...position);
 function tray(w,h,d){return mergeGeometries([cube([w,.008,d],[0,-h/2,0]),cube([w,h,.008],[0,0,-d/2]),cube([w,h,.008],[0,0,d/2]),cube([.008,h,d],[-w/2,0,0]),cube([.008,h,d],[w/2,0,0])]);}
+// Broad stamped-panel features, authored from simple profiles rather than source meshes.
+function panel(w,d,thickness){
+ const outline=new T.Shape();const points=[[-w/2+.10,-d/2], [w/2-.08,-d/2],[w/2,-d/2+.08],[w/2,d/2-.10],[w/2-.08,d/2],[-w/2+.10,d/2],[-w/2,d/2-.16],[-w/2,-d/2+.16]];
+ points.forEach(([x,z],i)=>i?outline.lineTo(x,z):outline.moveTo(x,z));outline.closePath();
+ return new T.ExtrudeGeometry(outline,{depth:thickness,bevelEnabled:false}).rotateX(Math.PI/2).toNonIndexed();
+}
+function packLid(){
+ const shapes=[panel(2.74,1.20,.012)];
+ for(const z of [-.39,.39])for(const x of [-.77,-.16,.45,.99])shapes.push(cube([.43,.024,.19],[x,.012,z]));
+ shapes.push(cube([2.40,.028,.07],[.03,.014,0]));
+ for(const z of [-.57,.57]){shapes.push(cube([2.48,.013,.026],[0,.006,z]));for(let i=0;i<12;i++)shapes.push(new T.CylinderGeometry(.012,.012,.007,10).translate(-1.2+i*.218,.008,z));}
+ for(const x of [-1.19,1.21])shapes.push(cube([.045,.022,1.01],[x,.011,0]));
+ return mergeGeometries(shapes.map(g=>g.index?g.toNonIndexed():g));
+}
+function packTray(){const shapes=[panel(2.74,1.20,.012),tray(2.60,.19,1.12).translate(0,.085,0)];for(let i=0;i<10;i++)for(const z of [-.60,.60])shapes.push(cube([.085,.012,.065],[-1.14+i*.25,0,z]));return mergeGeometries(shapes.map(g=>g.index?g.toNonIndexed():g));}
+function harness(){
+ const tube=points=>new T.TubeGeometry(new T.CatmullRomCurve3(points.map(p=>new T.Vector3(...p)),false,'centripetal'),48,.006,8,false);
+ const shapes=[tube([[-1.23,0,-.12],[-1.1,0,0],[-.8,0,.04],[.65,0,.04],[1.05,0,0],[1.19,0,-.13]])];
+ for(const x of [-.78,-.28,.22,.72]){shapes.push(tube([[x,0,.04],[x+.02,0,.10],[x+.02,.014,.20]]));shapes.push(cube([.025,.018,.035],[x+.02,.014,.21]));}
+ return mergeGeometries(shapes.map(g=>g.index?g.toNonIndexed():g));
+}
 function bracket(){return mergeGeometries([cube([.055,.008,.03]),cube([.008,.04,.03],[-.024,.02,0])]);}
 function pipe(length,radius=.007){return new T.TubeGeometry(new T.CatmullRomCurve3([new T.Vector3(-length/2,0,0),new T.Vector3(0,.02,.035),new T.Vector3(length/2,0,0)]),18,radius,8,false);}
 function fan(){const ring=new T.TorusGeometry(.025,.004,8,24);ring.rotateX(Math.PI/2);const blades=[ring,new T.CylinderGeometry(.008,.008,.015,12)];for(let i=0;i<4;i++)blades.push(cube([.038,.006,.009],[.01,0,0]).rotateY(i*Math.PI/2));return mergeGeometries(blades)}
@@ -39,8 +60,8 @@ export function buildModel(scene){
    else if(n.includes('sensor')){size=[.018,.008,.018];pos=[x,.165,z];role='Symbolic module temperature sensor.';}
    else {geometry=bracket();pos=[x,.17,z+.18];role='Module mechanical support.';}
   } else if(item.group==='Structure'){
-   if(n==='enclosure bottom'){geometry=tray(2.72,.19,1.18);pos=[-.12,.07,0];material='Aluminum, illustrative';role='Protective pack enclosure with perimeter walls.';}
-   else if(n==='enclosure top'||n.includes('insulator-shield')){size=[2.74,.009,1.2];pos=[-.12,n==='enclosure top'?.205:.19,0];cover=true;role='Upper pack protection and insulation.';}
+   if(n==='enclosure bottom'){geometry=packTray();pos=[-.12,-.025,0];material='Aluminum, illustrative';role='Protective pack enclosure with perimeter walls.';}
+   else if(n==='enclosure top'||n.includes('insulator-shield')){geometry=n==='enclosure top'?packLid():panel(2.67,1.12,.004);pos=[-.12,n==='enclosure top'?.275:.265,0];cover=true;role='Upper pack protection and insulation.';}
    else if(n==='second enclosure bottom'){geometry=tray(.4,.06,.4);pos=[-1.15,-.005,0];role='Secondary module support pan.';}
    else if(n.includes('hose')){geometry=pipe(2.25,.01);pos=[-.05,.02,k%2?.53:-.53];group='Thermal';role='Conceptual coolant manifold route.';material='Elastomer hose, illustrative';}
    else if(n.includes('quick disconnect')){geometry=bracket();pos=[-.85+k*.5,.04,.53];group='Thermal';role='Supports a coolant connection.';}
@@ -48,7 +69,7 @@ export function buildModel(scene){
    else if(n.includes('center')){size=[.018,.14,1.05];pos=[-.4+k*.5,.045,0];role='Internal structural cross-member.';}
    else if(n.includes('shield')){size=[.85,.006,1.15];pos=[-1+k*.87,-.045,0];role='Underbody protective shield.';}
    else if(n.includes('insulation')){size=[.40,.003,.44];pos=[-.65+(k%4)*.5,-.02-Math.floor(k/4)*.006,k%2?.3:-.3];material='Insulating sheet, illustrative';role='Separates conductive enclosure surfaces from components.';}
-   else if(n.includes('access panel')){size=[.12,.008,.11];pos=[-1.24+k*.15,.205,.45];cover=true;role='Conceptual access opening cover.';}
+   else if(n.includes('access panel')){size=[.12,.008,.11];pos=[-1.24+k*.15,.285,.45];cover=true;role='Conceptual access opening cover.';}
    else{geometry=bracket();pos=[-.9+k*.55,.03,k%2?.58:-.58];role='Pack mounting bracket.';}
   } else {
    const relay=path.includes('relay box'),secondary=path.includes('2nd relay'),bms=path.includes('bms master'),fuse=path.startsWith('electrical parts/fuse');
@@ -69,7 +90,7 @@ export function buildModel(scene){
     else if(n.includes('cover')){size=[.06,.004,.05];cover=true;role='Electrical protection cover.';}
     else if(n.includes('sensor')){size=[.015,.014,.018];role='Symbolic sensing element.';}
    }else if(path.includes('hv busbars')){pos=[-.95+k*.085,.17,0];if(n.includes('bracket')){geometry=bracket();role='HV busbar mounting support.';}else{geometry=mergeGeometries([cube([.07,.004,.025]),cube([.025,.004,.08],[.025,0,.045])]);role='Symbolic pack-level current distribution link.';material='Copper, illustrative';}}
-   else if(n.includes('harness')){geometry=pipe(1.85,.005);pos=[-.1,.165+Math.floor(k/2)*.025,k%2?.48:-.48];role='Symbolic pack monitoring harness.';}
+   else if(n.includes('harness')){geometry=harness();pos=[-.1,.178+Math.floor(k/2)*.025,k%2?.32:-.49];role='Branched pack monitoring harness with a perimeter trunk, module drops, and connector ends.';}
    else if(n.includes('connector')){pos=[1.265,.055+Math.floor(k/10)*.05,-.44+(k%10)*.085];geometry=n.includes('support')?bracket():new T.CylinderGeometry(.015,.015,.04,12).rotateZ(Math.PI/2);role='Conceptual HV connection interface.';material='Polymer and conductor, illustrative';}
   }
   if(role==='Represents a small support or interface in this conceptual assembly.')throw new Error('Missing conceptual definition: '+item.key+' '+item.name);

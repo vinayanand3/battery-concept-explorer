@@ -19,3 +19,5 @@ The assembly browser follows the nested grouping and starts collapsed. Search ex
 Changing geometry and dimensions does not by itself establish rights to redistribute source-derived labels or arrangement. This project makes no claim of licensing clearance or independent clean-room provenance.
 
 The component audit covers every source inventory entry with one conceptual representation per entry, including the standalone cell. The Parts catalog lays out all 201 representations for individual inspection. Shapes and sizes remain illustrative; embedded details within source meshes are not reproduced.
+
+Assembly controls include Assembled, Open pack, Module detail, Cells only, X-ray, Focus, Isolate, and Hide. The color legend identifies each material-independent component category. The enclosure uses an authored clipped panel outline, raised ribs and pads, mounting tabs, and perimeter fasteners. Pack harnesses use authored branched routes and connector ends. These are approximate visual interpretations, not copied surface geometry.
