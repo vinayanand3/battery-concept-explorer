@@ -58,7 +58,7 @@ export function buildModel(scene){
   if(assembly){const m=Number(n.match(/(\d+)$/)[1]);const [x,z]=MODULES[m];pos=[x,.076,z];geometry=tray(.455,.16,.46);cover=true;role='Simplified module shell. Cells are separate, selectable layers.';material='Aluminum, illustrative';}
   else if(detail){
    const [x,z]=MODULES[0];pos=[x,.08,z];
-   if(n==='cell'){geometry=new T.CylinderGeometry(.0105,.0105,.07,20);pos=[x-.18,.23,z+.24];role='Standalone conceptual cell reference, shown separately from the instanced cell layers. Nominal 21 × 70 mm, not measured source geometry.';material='Mixed cell materials, unspecified chemistry';cover=true;}
+   if(n==='cell'){geometry=new T.CylinderGeometry(.007,.007,.07,20);pos=[x-.18,.23,z+.24];role='Standalone conceptual cell reference, shown separately from the instanced cell layers. Illustrative 14 × 70 mm, not measured source geometry.';material='Mixed cell materials, unspecified chemistry';cover=true;}
    else if(n.includes('separator')){size=[.40,.064,.004];pos=[x,k<5?.12:.04,z+(k%5-2)*.058];material='Insulating polymer, illustrative';role='Keeps adjacent cell groups separated.';}
    else if(n.includes('interconnect support')){size=[.41,.005,.29];pos=[x,k%2?.161:.002,z];material='Insulating polymer, illustrative';cover=true;role='Supports the current collector without conducting current.';}
    else if(n.includes('interconnect')){size=[.38,.003,.01];pos=[x,k<8?.16:.002,z+((k%8)-3.5)*.037];material='Copper, illustrative';role='Symbolic cell current collector; circuit topology is not specified.';}
@@ -113,7 +113,32 @@ export function buildModel(scene){
   const mesh=new T.Mesh(geometry,new T.MeshStandardMaterial({color:palette[group],metalness:group==='Electrical'?.35:.15,roughness:.5}));mesh.position.set(...pos);scene.add(mesh);
   const p={...item,group,hierarchy:[item.group,...item.path],mesh,dimensions,base:mesh.position.clone(),offset:new T.Vector3(pos[0]*.22,cover?.75:detail?.3+((k%4)*.07):group==='Electrical'?.5:group==='Thermal'?-.18:-.25,pos[2]*.4),description:role,material,cover,detail,assembly,visible:!cover};mesh.userData.part=p;mesh.visible=p.visible;parts.push(p);
  }
- const cellGeometry=new T.CylinderGeometry(.0105,.0105,.07,12);
- MODULES.forEach(([x,z],m)=>{for(let layer=0;layer<2;layer++){const mesh=new T.InstancedMesh(cellGeometry,new T.MeshStandardMaterial({color:palette.Cells,roughness:.4,metalness:.4}),192);const dummy=new T.Object3D();let i=0;for(let r=0;r<12;r++)for(let c=0;c<16;c++){dummy.position.set((c-7.5)*.023+(r%2)*.0115,layer?.121:.043,(r-5.5)*.021);dummy.updateMatrix();mesh.setMatrixAt(i++,dummy.matrix)}mesh.position.set(x,0,z);mesh.computeBoundingBox();mesh.computeBoundingSphere();scene.add(mesh);const p={key:`cells-${m}-${layer}`,name:`Module ${m+1} ${layer?'upper':'lower'} cells`,group:'Cells',hierarchy:['Cells',`Module ${m+1}`],mesh,dimensions:[.378,.07,.252],base:mesh.position.clone(),offset:new T.Vector3(x*.22,layer?.62:-.10,z*.4),description:'192 generic cylinders in a 16 × 12 staggered layer. Authored 21 × 70 mm envelope; no source cell geometry.',material:'Mixed cell materials, unspecified chemistry',detail:m===0,visible:true};mesh.userData.part=p;parts.push(p)}});
+ const cellGeometry=new T.CylinderGeometry(.007,.007,.07,12);
+ MODULES.forEach(([x,z],m)=>{for(let layer=0;layer<2;layer++){const mesh=new T.InstancedMesh(cellGeometry,new T.MeshStandardMaterial({color:palette.Cells,roughness:.4,metalness:.4}),432);const dummy=new T.Object3D();let i=0;for(let r=0;r<18;r++)for(let c=0;c<24;c++){dummy.position.set((c-11.5)*.015+(r%2)*.0075,layer?.121:.043,(r-8.5)*.013);dummy.updateMatrix();mesh.setMatrixAt(i++,dummy.matrix)}mesh.position.set(x,0,z);mesh.computeBoundingBox();mesh.computeBoundingSphere();scene.add(mesh);const p={key:`cells-${m}-${layer}`,name:`Module ${m+1} ${layer?'upper':'lower'} cells`,group:'Cells',hierarchy:['Cells',`Module ${m+1}`],mesh,dimensions:[.367,.07,.235],base:mesh.position.clone(),offset:new T.Vector3(x*.22,layer?.62:-.10,z*.4),description:'432 generic cylinders in a 24 × 18 staggered layer. Authored 14 × 70 mm envelope; no source cell geometry.',material:'Mixed cell materials, unspecified chemistry',detail:m===0,visible:true};mesh.userData.part=p;parts.push(p)}});
+ // Assign ordered vertical bands using geometry bounds. Related parts keep their
+ // assembly X/Z positions; a gap separates every band at full explosion.
+ const bands=new Map();
+ for(const p of parts){
+  const n=p.name.toLowerCase();let band;
+  if(n==='enclosure top')band=100;
+  else if(n.includes('insulator-shield'))band=95;
+  else if(n.includes('access panel'))band=105;
+  else if(n==='enclosure bottom')band=0;
+  else if(p.group==='Structure')band=n.includes('shield')?-20:n.includes('insulation')?-10:5;
+  else if(p.group==='Thermal')band=10;
+  else if(p.group==='Cells')band=p.name.includes('upper')?40:20;
+  else if(p.assembly)band=30;
+  else if(p.detail){band= p.base.y<.08?25:45; if(p.cover)band=60;}
+  else if(n.includes('harness'))band=70;
+  else band=p.cover?85:75;
+  if(!bands.has(band))bands.set(band,[]);bands.get(band).push(p);
+ }
+ let bottom=-.45;
+ for(const [band,items] of [...bands].sort((a,b)=>a[0]-b[0])){
+  const bounds=items.map(p=>new T.Box3().setFromObject(p.mesh));
+  const min=Math.min(...bounds.map(b=>b.min.y)),max=Math.max(...bounds.map(b=>b.max.y));
+  for(const p of items)p.offset.set(p.base.x*.18,bottom-min,p.base.z*.35);
+  bottom+=max-min+.12;
+ }
  return parts;
 }

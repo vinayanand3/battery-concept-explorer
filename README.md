@@ -2,7 +2,7 @@
 
 A public educational Three.js viewer built entirely from procedural boxes and cylinders. No reference images, scanned geometry, STL files, private BOM data, or measured source dimensions are included.
 
-The generic layout uses nine modules with two staggered layers of 192 cells each. These counts, positions, approximate dimensions, and illustrative material labels are authored demonstration parameters, not specifications of a production vehicle. Mass, electrical topology, thermal behavior, and engineering clearances are not validated or simulated.
+The generic layout uses nine modules with two staggered layers of 432 cells each. These counts, positions, approximate dimensions, and illustrative material labels are authored demonstration parameters, not specifications of a production vehicle. Mass, electrical topology, thermal behavior, and engineering clearances are not validated or simulated.
 
 Features: component selection, collapsed assembly browser, search, visibility, isolation, camera presets, opt-in annotations, and exploded view.
 
@@ -12,7 +12,7 @@ Run `npm install` and `npm run dev`. Build using `npm run build`. GitHub Actions
 
 The viewer now has 201 procedural component representations, guided by the detailed workspace's component labels and hierarchy. `src/inventory.json` contains only names, hierarchy labels, categories, and new concept identifiers. It does not contain source coordinates, bounds, geometry, materials, weights, or BOM values. `src/model.js` authors all shapes and dimensions from primitives.
 
-There are nine conceptual module locations, with eighteen instanced cell layers and 3,456 illustrative cells. Eight module assemblies are shell representations; one module exposes the detailed component breakdown. This is inventory-level coverage, not replication of every internal feature in each source mesh. Holes, seals, fasteners, routing, and internal features are only present where explicitly modeled. Fitting, clearances, materials, mass, circuit topology, and thermal performance are not validated.
+There are nine conceptual module locations, with eighteen instanced cell layers and 7,776 illustrative cells. Eight module assemblies are shell representations; one module exposes the detailed component breakdown. This is inventory-level coverage, not replication of every internal feature in each source mesh. Holes, seals, fasteners, routing, and internal features are only present where explicitly modeled. Fitting, clearances, materials, mass, circuit topology, and thermal performance are not validated.
 
 The assembly browser follows the nested grouping and starts collapsed. Search expands matching paths, selection opens the component's ancestors, and each component can be hidden, isolated, or focused. Module detail isolates the detailed module. Annotations remain off by default.
 
@@ -21,3 +21,5 @@ Changing geometry and dimensions does not by itself establish rights to redistri
 The component audit covers every source inventory entry with one conceptual representation per entry, including the standalone cell. The Parts catalog lays out all 201 representations for individual inspection. Shapes and sizes remain illustrative; embedded details within source meshes are not reproduced.
 
 Assembly controls include Assembled, Open pack, Module detail, Cells only, X-ray, Focus, Isolate, and Hide. The color legend identifies each material-independent component category. The enclosure uses an authored clipped panel outline, raised ribs and pads, mounting tabs, and perimeter fasteners. Pack harnesses use authored branched routes and connector ends. These are approximate visual interpretations, not copied surface geometry.
+
+Exploded views use geometry-bounded vertical bands with 120 mm conceptual clearance at full explosion. Releasing the slider reframes the current view. Inventory coverage is 200 original component names plus one cell template; 18 repeated layers contain 432 illustrative cells each. Cells use an authored 14 × 70 mm envelope to fit the conceptual module layout, not production cell dimensions.
